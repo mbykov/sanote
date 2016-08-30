@@ -1,0 +1,30 @@
+{
+    "name": "notation",
+    "version": "0.1.0",
+    "description": "converter of sanskrit morphological notation from tranditional to european and vise versa",
+    "main": "index.js",
+    "scripts": {
+        "test": "make test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/mbykov/notation.git"
+    },
+    "keywords": [
+        "sanskrit",
+        "devanagari",
+        "node.js",
+        "component.js",
+        "morphology",
+        "notation"
+    ],
+    "author": "Michael Bykov",
+    "license": "GNU GPL",
+    "bugs": {
+        "url": "https://github.com/mbykov/notation/issues"
+    },
+    "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+    }
+}

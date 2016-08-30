@@ -1,0 +1,20 @@
+{
+  "name": "notation-component",
+    "repo": "mbykov/notation",
+    "description": "converter of sanskrit morphological notation from tranditional to european and vise versa",
+    "version": "0.1.0",
+    "keywords": [
+        "sanskrit",
+        "devanagari",
+        "node.js",
+        "component.js",
+        "morphology",
+        "notation"
+    ],
+    "license": "GPL",
+    "main": "index.js",
+    "scripts": [
+        "index.js"
+    ],
+    "remotes": []
+}
