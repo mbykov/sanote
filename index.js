@@ -8,22 +8,27 @@ module.exports = notation();
 
 function notation() {
     if (!(this instanceof notation)) return new notation();
-    log('MAIN NOTATION');
 }
 
 //  {noun: true, gend: "masc", sups: Array[1]}
 notation.prototype.tohi = function(morph) {
     log('MORPH TOHI:', morph);
-
-    let res, sup, gend, nsups;
-    let gsupstrs = [];
-    // let sups;
-    // [c.noun, c[morph.gend], morph.sups.join(', ')].join(': ');
+    let res, nsups, ntips;
     if (morph.noun) {
         nsups = num4sups(morph.sups);
+        res = [c[morph.gend], nsups].join(', ');
+    } else if (morph.verb) {
+        ntips = morph.tips.join(', ');
+        res = [morph.gana, morph.pada, morph.la, ntips].join(', ');
+    } else if (morph.pron) {
+        // let morph = {pron: true, var: q.var, gend: q.gend, sups: q.sups};
+        nsups = num4sups(morph.sups);
+        if (morph.var == 'pers') res = [c.pron, morph.sups.join(', ')].join(', ');
+        else res = [c.pron, c[morph.gend], nsups].join(', ');
+    } else if (morph.plain) {
+        res = 'pada in comp.';
     }
-    log('NOTA:', nsups);
-    return nsups;
+    return res;
 }
 
 notation.prototype.toeu = function(morphs) {
@@ -52,16 +57,13 @@ function num4sups(sups) {
     let res = '';
     for (num in nsups) {
         nsup = nsups[num];
-        log('NSUP', nsup);
         let supstrs = [];
         for (let ss of nsup) {
-            log('SS', ss);
             let s = ss.split('.')[0];
             supstrs.push(c.case[s]);
         }
         let supstr = supstrs.join(', ');
-        log('supstr:', supstr);
-        res += [c.num[num], supstr].join(': ');
+        res += [c.num[num], supstr].join('-> ');
     }
     return res;
 }
