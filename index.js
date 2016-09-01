@@ -17,6 +17,7 @@ notation.prototype.tohi = function(morph) {
     if (morph.noun) {
         nsups = num4sups(morph.sups);
         res = [c[morph.gend], nsups].join(', ');
+        res = [c.noun, res].join(': ');
     } else if (morph.verb) {
         ntips = morph.tips.join(', ');
         res = [morph.gana, morph.pada, morph.la, ntips].join(', ');
@@ -27,6 +28,8 @@ notation.prototype.tohi = function(morph) {
         else res = [c.pron, c[morph.gend], nsups].join(', ');
     } else if (morph.plain) {
         res = 'pada in comp.';
+    } else if (morph.ind) {
+        res = c.ind;
     }
     return res;
 }
@@ -63,7 +66,7 @@ function num4sups(sups) {
             supstrs.push(c.case[s]);
         }
         let supstr = supstrs.join(', ');
-        res += [c.num[num], supstr].join('-> ');
+        res += [c.num[num], supstr].join(': ');
     }
     return res;
 }
