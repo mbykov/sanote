@@ -1,6 +1,8 @@
 // notation node.js and component.js for duo.js module
 
-var c = require('./lib/constants');
+var cons = require('./lib/constants');
+var c = cons.c;
+var eu = cons.eu;
 
 log('=============== EXTERNAL');
 
@@ -34,19 +36,26 @@ notation.prototype.tohi = function(morph) {
     return res;
 }
 
-notation.prototype.toeu = function(morphs) {
-    log('INSIDE', morphs);
-    return 'kuku';
+// नाम: पु॰, एक॰: द्वि॰
+notation.prototype.toeu = function(str) {
+    log('TO EU', str);
+    let parts = str.split(/[:,]/);
+    let part, eures = [];
+    for (part of parts) {
+        eures.push(eu[part.trim()]);
+    }
+    let res = eures.join(' ');
+    res = res.replace(/,$/, '');
+    return res;
 }
 
-notation.prototype.hi2eu = function(morphs) {
-    log('INSIDE', morphs);
-    return 'kuku';
-}
+// notation.prototype.hi2eu = function(morphs) {
+//     log('INSIDE', morphs);
+//     return 'kuku';
+// }
 
-notation.prototype.eu2hi = function(morphs) {
-
-}
+// notation.prototype.eu2hi = function(morphs) {
+// }
 
 function num4sups(sups) {
     let sup, num, gend;
