@@ -26,7 +26,7 @@ notation.prototype.tohi = function(morph) {
     } else if (morph.pron) {
         // let morph = {pron: true, var: q.var, gend: q.gend, sups: q.sups};
         nsups = num4sups(morph.sups);
-        if (morph.var == 'pers') res = [c.pron, morph.sups.join(', ')].join(', ');
+        if (morph.var == 'pers') res = [c.pron, nsups].join(', ');
         else res = [c.pron, c[morph.gend], nsups].join(', ');
     } else if (morph.plain) {
         res = 'pada in comp.';
