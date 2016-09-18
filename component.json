@@ -2,7 +2,7 @@
   "name": "sanote",
     "repo": "mbykov/sanote",
     "description": "converter of sanskrit morphological notation from tranditional to european and vise versa",
-    "version": "0.1.0",
+    "version": "0.0.1",
     "keywords": [
         "sanskrit",
         "devanagari",

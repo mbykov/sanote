@@ -1,6 +1,6 @@
 {
     "name": "sanote",
-    "version": "0.1.0",
+    "version": "0.0.1",
     "description": "converter of sanskrit morphological sanote from traditional to european and vise versa",
     "main": "index.js",
     "scripts": {

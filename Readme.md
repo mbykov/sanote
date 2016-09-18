@@ -1,20 +1,18 @@
-# node.js & component.js sanote converter
+# sanote: node.js & component.js sanote converter
 
 converter of sanskrit morphological notation from traditional to european and vise versa
 
 
 ## Installation
 
+Deprecated:
 With [component](http://github.com/component/component)
 
-````bash
-$ component install mbykov/sanote
-````
 
 ## API
 
 ````javascript
-var sanote = require('./notation-component');
+var sanote = require('./sanote');
 ````
 
 three methods:
@@ -42,10 +40,6 @@ from european to traditional notation:
     to be done
 ````
 
-
-## Running mocha.js tests
-
-open test/index.html
 
 
 ## License
