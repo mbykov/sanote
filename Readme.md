@@ -20,7 +20,6 @@ three methods:
 from morph object to traditional notation:
 
 ````javascript
-log('MSTR:', morph);
     let morph = {noun: true, gend: neut', sups: ['1.1, 2.1']};
     let mstr = sanote.tohi(morph);
     ->  नपु॰, एक॰: प्र॰, द्वि॰
