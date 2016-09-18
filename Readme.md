@@ -1,4 +1,4 @@
-# sanote: node.js & component.js sanote converter
+# sanote.js
 
 converter of sanskrit morphological notation from traditional to european and vise versa
 
