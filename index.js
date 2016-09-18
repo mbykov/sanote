@@ -4,8 +4,6 @@ var cons = require('./lib/constants');
 var c = cons.c;
 var eu = cons.eu;
 
-// log('=============== EXTERNAL NOTATION');
-
 module.exports = notation();
 
 function notation() {
@@ -14,7 +12,6 @@ function notation() {
 
 //  {noun: true, gend: "masc", sups: Array[1]}
 notation.prototype.tohi = function(morph) {
-    // log('MORPH TOHI:', morph);
     let res, nsups, ntips;
     if (morph.noun) {
         nsups = num4sups(morph.sups);
@@ -38,7 +35,6 @@ notation.prototype.tohi = function(morph) {
 
 // नाम: पु॰, एक॰: द्वि॰
 notation.prototype.toeu = function(str) {
-    // log('TO EU', str);
     let parts = str.split(/[:,]/);
     let part, eures = [];
     for (part of parts) {
@@ -58,12 +54,10 @@ function num4sups(sups) {
         if (!nsups[num]) nsups[num] = [];
         nsups[num].push(kase);
     }
-    log('NSUPS', nsups);
     let kases, supstr;
     let res = '';
     for (num in nsups) {
         let supstr = nsups[num].map(function(sup) { return c.case[sup]; } ).join(', ');
-        log('NUM-KASES', num, c.num[num], 'k-str', supstr);
         res += [c.num[num], supstr, c._].join(': ');
     }
     return res;
@@ -75,11 +69,3 @@ function log() { console.log.apply(console, arguments); }
 function inc(arr, item) {
     return (arr.indexOf(item) > -1) ? true : false;
 }
-
-// notation.prototype.hi2eu = function(morphs) {
-//     log('INSIDE', morphs);
-//     return 'kuku';
-// }
-
-// notation.prototype.eu2hi = function(morphs) {
-// }
