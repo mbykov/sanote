@@ -27,6 +27,8 @@ notation.prototype.tohi = function(morph) {
         else res = [c.pron, c[morph.gend], nsups].join(', ');
     } else if (morph.plain) {
         res = 'pada in comp.';
+    } else if (morph.bg) {
+        res = 'BG';
     } else if (morph.ind) {
         res = c.ind;
     }
